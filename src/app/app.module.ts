@@ -16,6 +16,7 @@ import { FriendAddComponent } from './friends/friend-add/friend-add.component';
 import { ProfileLoginComponent } from './profile/profile-login/profile-login.component';
 import { ProfileDetailsComponent } from './profile/profile-details/profile-details.component';
 import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
+import { NavbarComponent } from './navbar.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ProfileEditComponent } from './profile/profile-edit/profile-edit.compon
     ProfileLoginComponent,
     ProfileDetailsComponent,
     ProfileEditComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule
