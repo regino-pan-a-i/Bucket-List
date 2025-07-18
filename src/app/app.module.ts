@@ -17,6 +17,7 @@ import { ProfileLoginComponent } from './profile/profile-login/profile-login.com
 import { ProfileDetailsComponent } from './profile/profile-details/profile-details.component';
 import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 import { NavbarComponent } from './navbar.component';
+import { RecommendationsComponent } from './recommendations/recommendations.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { NavbarComponent } from './navbar.component';
     ProfileDetailsComponent,
     ProfileEditComponent,
     NavbarComponent,
+    RecommendationsComponent,
   ],
   imports: [
     BrowserModule
