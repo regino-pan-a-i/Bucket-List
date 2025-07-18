@@ -1,0 +1,53 @@
+.recommendation-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    object-position: center;
+}
+
+/* For vertical/portrait images, we might want a different approach */
+@media (max-width: 768px) {
+    .recommendation-image {
+        height: 200px;
+    }
+}
+
+/* Alternative styling for better vertical image handling */
+.recommendation-image-container {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+.details-section {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.action-buttons {
+    margin-top: 20px;
+}
+
+.margin-left-right {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.panel {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.label {
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+.text-muted {
+    font-style: italic;
+}

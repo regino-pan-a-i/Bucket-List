@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MOCKRECOMMENDATIONS } from '../MOCKRECOMMENDATIONS';
+import { Recommendation } from '../recommendations.model';
 
 @Component({
   selector: 'app-recommendation-details',
@@ -7,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './recommendation-details.component.css'
 })
 export class RecommendationDetailsComponent {
+
+  recommendation: Recommendation = MOCKRECOMMENDATIONS[0]
 
 }

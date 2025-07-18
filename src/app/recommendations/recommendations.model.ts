@@ -6,17 +6,18 @@ export enum RecommendationStatus {
     DECLINED = 'Declined'
 }
 
-export enum Feedback {
-    LIKED = "liked",
-    DISLIKED = "disliked"
+export enum Reaction {
+    LIKED = "Liked",
+    DISLIKED = "Disliked",
+    NO_REACTION = "No Reaction Yet"
 }
 
 export enum Category {
-    BOOKS = "books",
-    MOVIES = "movies",
-    SHOWS = "shows",
-    RESTAURANTS = "restaurants", 
-    PLACES = "places"
+    BOOKS = "Books",
+    MOVIES = "Movies",
+    SHOWS = "TV Shows",
+    RESTAURANTS = "Restaurants", 
+    PLACES = "Places"
 }
 
 export class Recommendation{
@@ -29,6 +30,7 @@ export class Recommendation{
     public source: string 
     public notes: string 
     public status: RecommendationStatus // "not tried" | "done",
-    public feedback: Feedback // "liked" ,
+    public reaction: Reaction // "liked" ,
+    public imageUrl: string
 }
 
