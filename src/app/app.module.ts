@@ -18,6 +18,7 @@ import { ProfileDetailsComponent } from './profile/profile-details/profile-detai
 import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 import { NavbarComponent } from './navbar.component';
 import { RecommendationsComponent } from './recommendations/recommendations.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { RecommendationsComponent } from './recommendations/recommendations.comp
     ProfileEditComponent,
     NavbarComponent,
     RecommendationsComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule
