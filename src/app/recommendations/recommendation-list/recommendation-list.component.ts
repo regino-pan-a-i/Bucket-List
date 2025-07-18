@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MOCKRECOMMENDATIONS } from '../MOCKRECOMMENDATIONS';
+import { Recommendation } from '../recommendations.model';
 
 @Component({
   selector: 'app-recommendation-list',
@@ -8,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class RecommendationListComponent {
 
+  recommendations : Recommendation[]
+  selectedRecommendation : boolean = false
+
+  ngOnInit(){
+    this.recommendations = MOCKRECOMMENDATIONS
+    console.log(this.recommendations)
+  }
 }

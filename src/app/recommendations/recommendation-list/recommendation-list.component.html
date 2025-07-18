@@ -1,1 +1,37 @@
-<p>recommendation-list works!</p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-xs-12">
+
+                <h3 class="title col-xs-8">Recommendations</h3>
+                
+                <!-- <div class="input-group pull-left pad-left-right col-xs-7">
+                    <input #searchBox type="text" class="form-control" (keyup)="search(searchBox.value)" placeholder="Enter a search value">
+                    <div class="glyphicon glyphicon-search input-group-addon" (click)="search(searchBox.value)"></div>
+                </div> -->
+                <div class="pull-right col-xs-4 " style="margin-top: 12px;">
+                    <a class="btn btn-success">Create One</a>
+                    <!-- <a class="btn btn-success" [routerLink]="['new']">New Contact</a> -->
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <!-- <div 
+                cdkDropList 
+                class="col-xs-12" 
+                id="contactList"
+                [cdkDropListData]="contacts"
+                [cdkDropListConnectedTo]="['groupList']"
+                >
+                <cms-contact-item cdkDrag *ngFor="let contact of contacts | contactsFilter:this.term" [cdkDragData]="contact" [contact]="contact"></cms-contact-item>
+            </div> -->
+            <div class="col-xs-12">
+                <app-recommendation-item *ngFor="let recommendation of recommendations" [recommendation]="recommendation"></app-recommendation-item>
+            </div>
+        </div>
+    </div>
+</div>

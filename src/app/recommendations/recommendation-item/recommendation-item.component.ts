@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Recommendation } from '../recommendations.model';
 
 @Component({
   selector: 'app-recommendation-item',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class RecommendationItemComponent {
 
+  @Input() recommendation! : Recommendation
+
+  ngOnInit(){
+    console.log(this.recommendation)
+  }
 }
