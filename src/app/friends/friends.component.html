@@ -1,1 +1,9 @@
-<app-friend-list></app-friend-list>
+<div class="row">
+    <div class="friend-rec-list-column" [class.full-width]="!isRouterOutletActive" [class.split-view]="isRouterOutletActive">
+        <app-friend-list></app-friend-list>
+    </div>
+    <div class="friend-rec-details-column" [class.hidden]="!isRouterOutletActive">
+        <router-outlet (activate)="onRouterOutletActivate($event)" (deactivate)="onRouterOutletDeactivate()"></router-outlet>
+    </div>
+</div>
+        
