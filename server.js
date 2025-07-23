@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('dotenv').config(); // Load environment variables
 const recommendationRoutes = require('./server/routes/recommendations')
+const friendRoutes = require('./server/routes/friends')
 
 var mongoose = require('mongoose');
 
@@ -49,6 +50,7 @@ app.use(express.static(path.join(__dirname, 'dist/bucket-list')));
 // Tell express to map the default route ('/') to the index route
 app.use('/', index);
 app.use('/recommendations', recommendationRoutes)
+app.use('/friends', friendRoutes)
 
 // Tell express to map all other non-defined routes back to the index page
 app.get('/*splat', (req, res) => {

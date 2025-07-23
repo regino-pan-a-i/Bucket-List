@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FriendService } from './friend.service';
+import { Router, NavigationEnd } from '@angular/router';
+
 
 @Component({
   selector: 'app-friends',
@@ -8,4 +11,7 @@ import { Component } from '@angular/core';
 })
 export class FriendsComponent {
 
+  constructor(private friendService: FriendService, private router: Router){
+      this.friendService.friendSelectedEvent
+    }
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Friend } from '../friends.model';
 
 @Component({
   selector: 'app-friend-item',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './friend-item.component.css'
 })
 export class FriendItemComponent {
+
+  @Input()  friend : Friend
 
 }
