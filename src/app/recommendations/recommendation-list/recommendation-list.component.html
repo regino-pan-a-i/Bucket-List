@@ -14,23 +14,62 @@
                     <!-- <a class="btn btn-success" [routerLink]="['new']">New Contact</a> -->
                 </div>
 
-
             </div>
         </div>
+        <hr>
+        
+        <!-- Filter Section -->
+        <div class="row">
+            <div class="col-xs-12">
+                <h5>Filter by category</h5>
+            </div>
+        </div>
+        
+        <div class="row filter-buttons">
+            <div class="col-xs-12 col-sm-10">
+                <div class="btn-group" role="group" aria-label="Category filters">
+                    <button (click)="filterClick('Movies')" 
+                            class="btn btn-outline-info filter-btn"
+                            [class.active]="selectedCategory === 'Movies'">
+                        Movies
+                    </button>
+                    <button (click)="filterClick('Books')" 
+                            class="btn btn-outline-info filter-btn"
+                            [class.active]="selectedCategory === 'Books'">
+                        Books
+                    </button>
+                    <button (click)="filterClick('TV Shows')" 
+                            class="btn btn-outline-info filter-btn"
+                            [class.active]="selectedCategory === 'TV Shows'">
+                        Shows
+                    </button>
+                    <button (click)="filterClick('Restaurants')" 
+                            class="btn btn-outline-info filter-btn"
+                            [class.active]="selectedCategory === 'Restaurants'">
+                        Restaurants
+                    </button>
+                    <button (click)="filterClick('Places')" 
+                            class="btn btn-outline-info filter-btn"
+                            [class.active]="selectedCategory === 'Places'">
+                        Places
+                    </button>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-2">
+                <button (click)="filterClick('clear')" 
+                        class="btn btn-warning clear-filter-btn text-lg-center"
+                        type="button">
+                        X
+                </button>
+            </div>
+        </div>
+
     </div>
     <div class="panel-body">
         <div class="row">
-            <!-- <div 
-                cdkDropList 
-                class="col-xs-12" 
-                id="contactList"
-                [cdkDropListData]="contacts"
-                [cdkDropListConnectedTo]="['groupList']"
-                >
-                <cms-contact-item cdkDrag *ngFor="let contact of contacts | contactsFilter:this.term" [cdkDragData]="contact" [contact]="contact"></cms-contact-item>
-            </div> -->
+
             <div class="col-xs-12">
-                <app-recommendation-item *ngFor="let recommendation of recommendations" [recommendation]="recommendation"></app-recommendation-item>
+                <app-recommendation-item *ngFor="let recommendation of recommendations | recommendationFilter:this.selectedCategory" [recommendation]="recommendation"></app-recommendation-item>
             </div>
         </div>
     </div>

@@ -20,6 +20,7 @@ import { NavbarComponent } from './navbar.component';
 import { RecommendationsComponent } from './recommendations/recommendations.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FriendsComponent } from './friends/friends.component';
+import { RecommendationFilterPipe } from './recommendations/recommendation-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { FriendsComponent } from './friends/friends.component';
     RecommendationsComponent,
     ProfileComponent,
     FriendsComponent,
+    RecommendationFilterPipe,
   ],
   imports: [
     BrowserModule

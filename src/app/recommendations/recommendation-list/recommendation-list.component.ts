@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MOCKRECOMMENDATIONS } from '../MOCKRECOMMENDATIONS';
-import { Recommendation } from '../recommendations.model';
+import { Category, Recommendation } from '../recommendations.model';
 
 @Component({
   selector: 'app-recommendation-list',
@@ -13,8 +13,18 @@ export class RecommendationListComponent {
   recommendations : Recommendation[]
   selectedRecommendation : boolean = false
 
+  selectedCategory : Category | null
+
   ngOnInit(){
     this.recommendations = MOCKRECOMMENDATIONS
-    console.log(this.recommendations)
+    // console.log(this.recommendations)
+  }
+
+  filterClick(strCategory: string){
+    if (strCategory === "clear"){
+      this.selectedCategory = null
+    } else {
+      this.selectedCategory = strCategory as Category
+    }
   }
 }
