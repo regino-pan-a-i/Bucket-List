@@ -26,7 +26,7 @@ router.get("/", (req, res, next)=>{
 // Get recommendation by ID
 router.get("/:id", (req, res, next)=>{
     console.log("Getting recommendation by ID:", req.params.id);
-    Recommendation.findById(req.params.id)
+    Recommendation.findOne({ id: req.params.id })
         .then(recommendation => {
             if (!recommendation) {
                 return res.status(404).json({
@@ -85,8 +85,8 @@ router.put("/:id", (req, res, next) => {
     console.log('Updating recommendation with ID:', req.params.id);
     console.log('Update data:', req.body);
 
-    Recommendation.findByIdAndUpdate(
-        req.params.id,
+    Recommendation.findOneAndUpdate(
+        { id: req.params.id },
         {
             title: req.body.title,
             description: req.body.description,
@@ -125,7 +125,7 @@ router.put("/:id", (req, res, next) => {
 router.delete("/:id", (req, res, next) => {
     console.log('Deleting recommendation with ID:', req.params.id);
 
-    Recommendation.findByIdAndDelete(req.params.id)
+    Recommendation.findOneAndDelete({ id: req.params.id })
         .then(deletedRecommendation => {
             if (!deletedRecommendation) {
                 return res.status(404).json({

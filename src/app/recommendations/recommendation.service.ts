@@ -48,8 +48,10 @@ export class RecommendationService {
         return;
       }
   
-      // make sure id of the new Recommendation is empty
-      recommendation.id = '';
+      // Generate ID if not already set
+      if (!recommendation.id) {
+        recommendation.id = (this.getMaxId() + 1).toString();
+      }
   
       const headers = new HttpHeaders({'Content-Type': 'application/json'});
   
@@ -61,6 +63,8 @@ export class RecommendationService {
           (responseData) => {
             // add new document to documents
             this.recommendations.push(responseData.recommendation);
+            // emit the updated list
+            this.recommendationListChange.next(this.recommendations.slice());
           }
       );
     }
@@ -132,8 +136,13 @@ export class RecommendationService {
       this.httpClient.delete('http://localhost:3000/recommendations/' + recommendation.id)
         .subscribe(
           (responseData) => {
+            console.log('Recommendation deleted successfully:', responseData);
             this.recommendations.splice(pos, 1);
-            // this.sortAndSend();
+            // Emit the updated list
+            this.recommendationListChange.next(this.recommendations.slice());
+          },
+          (error) => {
+            console.error('Error deleting recommendation:', error);
           }
         );
     }

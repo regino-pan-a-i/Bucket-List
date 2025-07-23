@@ -80,12 +80,21 @@
                     <!-- Action Buttons -->
                     <div class="row action-buttons">
                         <div class="col-xs-12 text-right">
-                            <a class="btn btn-primary margin-left-right">
+                            <a class="btn btn-primary margin-left-right" [routerLink]="['/recommendations', recommendation.id, 'edit']">
                                 <i class="glyphicon glyphicon-edit"></i> Edit
                             </a>
-                            <a class="btn btn-danger margin-left-right">
+                            <button 
+                                type="button"
+                                class="btn btn-danger margin-left-right"
+                                (click)="onDelete()">
                                 <i class="glyphicon glyphicon-trash"></i> Delete
-                            </a>
+                            </button>
+                            <button 
+                                type="button" 
+                                class="btn btn-default margin-right"
+                                (click)="onCancel()">
+                                Cancel
+                            </button>
                         </div>
                     </div>
                 </div>

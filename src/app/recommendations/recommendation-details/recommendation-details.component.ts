@@ -26,10 +26,21 @@ export class RecommendationDetailsComponent {
   }
 
   onDelete(){
-    if (this.recommendation){
-      this.recommendationService.deleteRecommendation(this.recommendation)
+    if (this.recommendation) {
+      // Show confirmation dialog
+      const confirmDelete = confirm(`Are you sure you want to delete "${this.recommendation.title}"? This action cannot be undone.`);
+      
+      if (confirmDelete) {
+        console.log('Deleting recommendation:', this.recommendation.title);
+        this.recommendationService.deleteRecommendation(this.recommendation);
+        
+        // Navigate back to recommendations list
+        this.router.navigate(['/recommendations']);
+      }
     }
-    this.router.navigateByUrl('/recommendations')
+  }
+  onCancel() {
+    this.router.navigate(['/recommendations']);
   }
 
 }

@@ -1,1 +1,144 @@
-<p>recommendation-form works!</p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Create New Recommendation</h3>
+    </div>
+    <div class="panel-body">
+                <form #recommendationForm="ngForm" (ngSubmit)="onSubmit(recommendationForm)">
+            
+            <!-- Title -->
+            <div class="form-group">
+                <label for="title">Title *</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="title" 
+                    name="title"
+                    [(ngModel)]="recommendation.title"
+                    required
+                    #title="ngModel"
+                    placeholder="Enter the title">
+                <div *ngIf="title.invalid && title.touched" class="alert alert-danger">
+                    Title is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description *</label>
+                <textarea 
+                    class="form-control" 
+                    id="description" 
+                    name="description"
+                    [(ngModel)]="recommendation.description"
+                    required
+                    #description="ngModel"
+                    rows="3"
+                    placeholder="Enter a description">
+                </textarea>
+                <div *ngIf="description.invalid && description.touched" class="alert alert-danger">
+                    Description is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category *</label>
+                <select 
+                    class="form-control" 
+                    id="category" 
+                    name="category"
+                    [(ngModel)]="recommendation.category"
+                    required
+                    #category="ngModel">
+                    <option value="">Select a category</option>
+                    <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+                </select>
+                <div *ngIf="category.invalid && category.touched" class="alert alert-danger">
+                    Category is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="source">Source *</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="source" 
+                    name="source"
+                    [(ngModel)]="recommendation.source"
+                    required
+                    #source="ngModel"
+                    placeholder="e.g., Netflix, Amazon, Friend's recommendation">
+                <div *ngIf="source.invalid && source.touched" class="alert alert-danger">
+                    Source is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Notes</label>
+                <textarea 
+                    class="form-control" 
+                    id="notes" 
+                    name="notes"
+                    [(ngModel)]="recommendation.notes"
+                    rows="2"
+                    placeholder="Any additional notes or comments">
+                </textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status *</label>
+                <select 
+                    class="form-control" 
+                    id="status" 
+                    name="status"
+                    [(ngModel)]="recommendation.status"
+                    required
+                    #status="ngModel">
+                    <option value="">Select status</option>
+                    <option *ngFor="let stat of statuses" [value]="stat">{{stat}}</option>
+                </select>
+                <div *ngIf="status.invalid && status.touched" class="alert alert-danger">
+                    Status is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="reaction">Reaction</label>
+                <select 
+                    class="form-control" 
+                    id="reaction" 
+                    name="reaction"
+                    [(ngModel)]="recommendation.reaction">
+                    <option *ngFor="let react of reactions" [value]="react">{{react}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="imageUrl">Image URL</label>
+                <input 
+                    type="url" 
+                    class="form-control" 
+                    id="imageUrl" 
+                    name="imageUrl"
+                    [(ngModel)]="recommendation.imageUrl"
+                    placeholder="https://example.com/image.jpg">
+                <small class="form-text text-muted">Optional: Add an image URL for this recommendation</small>
+            </div>
+
+            <div class="form-group text-right">
+                <button 
+                    type="button" 
+                    class="btn btn-default margin-right"
+                    (click)="onCancel()">
+                    Cancel
+                </button>
+                <button 
+                    type="submit" 
+                    class="btn btn-success"
+                    [disabled]="!recommendationForm.valid">
+                    Create Recommendation
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>

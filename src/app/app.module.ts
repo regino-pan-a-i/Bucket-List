@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RecommendationItemComponent } from './recommendations/recommendation-item/recommendation-item.component';
@@ -52,6 +53,7 @@ import { FriendFilterPipe } from './friends/friend-filter.pipe';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

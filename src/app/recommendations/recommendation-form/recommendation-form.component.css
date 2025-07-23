@@ -1,0 +1,42 @@
+.panel {
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.alert-danger {
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 12px;
+}
+
+.margin-right {
+    margin-right: 10px;
+}
+
+.btn[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-control:focus {
+    border-color: #5bc0de;
+    box-shadow: 0 0 5px rgba(91, 192, 222, 0.3);
+}
+
+.text-right {
+    text-align: right;
+}
+
+.form-text {
+    margin-top: 5px;
+}

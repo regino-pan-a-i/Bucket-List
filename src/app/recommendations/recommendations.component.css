@@ -5,6 +5,7 @@
 
 .recommendation-list-column {
     transition: width 0.3s ease;
+    margin: 1%;
 }
 
 .recommendation-list-column.full-width {
@@ -23,6 +24,7 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
     transform: translateX(0);
     opacity: 1;
+    margin: 1%;
 }
 
 .recommendation-details-column.hidden {
