@@ -83,7 +83,11 @@ export class RecommendationService {
     if (!originalRecommendation || !newRecommendation) {
       return;
     }
-
+    // Set the same ID if not already set
+    if (!newRecommendation.id) {
+      newRecommendation.id = originalRecommendation.id;
+    }
+  
     const pos = this.recommendations.findIndex(d => d.id === originalRecommendation.id);
 
     if (pos < 0) {
@@ -102,7 +106,11 @@ export class RecommendationService {
       .subscribe(
         (responseData) => {
           this.recommendations[pos] = newRecommendation;
-          // this.sortAndSend();
+          // Emit the updated list
+          this.recommendationListChange.next(this.recommendations.slice());
+        },
+        (error) => {
+          console.error('Error updating recommendation:', error);
         }
       );
   }
