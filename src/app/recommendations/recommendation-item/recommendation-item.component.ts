@@ -12,6 +12,6 @@ export class RecommendationItemComponent {
   @Input() recommendation! : Recommendation
 
   ngOnInit(){
-    console.log(this.recommendation)
+    // console.log(this.recommendation)
   }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RecommendationItemComponent } from './recommendations/recommendation-item/recommendation-item.component';
@@ -46,7 +47,8 @@ import { RecommendationFilterPipe } from './recommendations/recommendation-filte
     RecommendationFilterPipe,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
