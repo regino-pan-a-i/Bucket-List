@@ -106,7 +106,6 @@ export class FriendService {
   getMaxId(): number {
     let maxId = 0;
 
-    console.log(this.friends)
     this.friends.forEach(friend=> {
       const currentId = +friend.id;
       if (currentId > maxId) {

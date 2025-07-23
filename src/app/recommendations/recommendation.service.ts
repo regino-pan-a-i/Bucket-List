@@ -106,8 +106,6 @@ export class RecommendationService {
 
   getMaxId(): number {
     let maxId = 0;
-
-    console.log(this.recommendations)
     this.recommendations.forEach(recommendation=> {
       const currentId = +recommendation.id;
       if (currentId > maxId) {

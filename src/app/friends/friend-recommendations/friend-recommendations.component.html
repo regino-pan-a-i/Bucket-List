@@ -1,1 +1,19 @@
-<p>friend-recommendations works!</p>
+<div class="panel panel-default" style="height: 400px; margin-bottom: 0%;">
+    <div class="panel-body">
+         <div class="row">
+            <div class="col-xs-12">
+
+                <h3 class="title col-xs-8">Recommendations</h3>
+
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+
+            <div class="col-xs-12">
+                <app-recommendation-item *ngFor="let recommendation of recommendations | friendFilter:friend" [recommendation]="recommendation"></app-recommendation-item>
+            </div>
+        </div>
+    </div>
+</div>

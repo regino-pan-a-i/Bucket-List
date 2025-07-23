@@ -1,5 +1,5 @@
 import { Friend } from "./friends.model";
-import { RecommendationStatus, Feedback, Category, Recommendation } from "../recommendations/recommendations.model";
+import { RecommendationStatus, Reaction, Category, Recommendation } from "../recommendations/recommendations.model";
 
 export const MOCKFRIENDS: Friend[] = [
   {
@@ -15,7 +15,8 @@ export const MOCKFRIENDS: Friend[] = [
         source: "Goodreads",
         notes: "Recommended for spiritual seekers.",
         status: RecommendationStatus.TRIED,
-        feedback: Feedback.LIKED,
+        reaction: Reaction.LIKED,
+        imageUrl: "https://placehold.co/200x300"
       },
     ],
   },
@@ -32,7 +33,8 @@ export const MOCKFRIENDS: Friend[] = [
         source: "Netflix",
         notes: "Mind-bending visuals.",
         status: RecommendationStatus.TRIED,
-        feedback: Feedback.LIKED,
+        reaction: Reaction.LIKED,
+        imageUrl: "https://placehold.co/200x300"
       },
       {
         id: "3",
@@ -43,7 +45,8 @@ export const MOCKFRIENDS: Friend[] = [
         source: "Yelp",
         notes: "Try the dragon roll!",
         status: RecommendationStatus.NOT_TRIED,
-        feedback: Feedback.LIKED,
+        reaction: Reaction.LIKED,
+        "imageUrl": "https://placehold.co/200x300"
       },
     ],
   },
@@ -60,7 +63,8 @@ export const MOCKFRIENDS: Friend[] = [
         source: "Netflix",
         notes: "Great for retro fans.",
         status: RecommendationStatus.TRIED,
-        feedback: Feedback.LIKED,
+        reaction: Reaction.LIKED,
+        imageUrl: "https://placehold.co/200x300"
       },
     ],
   },
@@ -77,7 +81,8 @@ export const MOCKFRIENDS: Friend[] = [
         source: "Travel Blog",
         notes: "Visit Sagrada Familia.",
         status: RecommendationStatus.DECLINED,
-        feedback: Feedback.DISLIKED,
+        reaction: Reaction.DISLIKED,
+        imageUrl: "https://placehold.co/200x300"
       },
     ],
   },
@@ -94,7 +99,8 @@ export const MOCKFRIENDS: Friend[] = [
         source: "Amazon",
         notes: "Practical and insightful.",
         status: RecommendationStatus.NOT_TRIED,
-        feedback: Feedback.LIKED,
+        reaction: Reaction.LIKED,
+        imageUrl: "https://placehold.co/200x300"
       },
     ],
   },
@@ -111,7 +117,8 @@ export const MOCKFRIENDS: Friend[] = [
         source: "Hulu",
         notes: "Social commentary through thriller.",
         status: RecommendationStatus.TRIED,
-        feedback: Feedback.LIKED,
+        reaction: Reaction.LIKED,
+        imageUrl: "https://placehold.co/200x300"
       },
     ],
   },
@@ -128,7 +135,8 @@ export const MOCKFRIENDS: Friend[] = [
         source: "Netflix",
         notes: "Critically acclaimed.",
         status: RecommendationStatus.TRIED,
-        feedback: Feedback.LIKED,
+        reaction: Reaction.LIKED,
+        imageUrl: "https://placehold.co/200x300"
       },
     ],
   },
@@ -145,7 +153,8 @@ export const MOCKFRIENDS: Friend[] = [
         source: "Travel Magazine",
         notes: "Lots to see and do.",
         status: RecommendationStatus.NOT_TRIED,
-        feedback: Feedback.LIKED,
+        reaction: Reaction.LIKED,
+        imageUrl: "https://placehold.co/200x300"
       },
     ],
   },
@@ -162,7 +171,8 @@ export const MOCKFRIENDS: Friend[] = [
         source: "Food Network",
         notes: "Pricey but worth it.",
         status: RecommendationStatus.DECLINED,
-        feedback: Feedback.DISLIKED,
+        reaction: Reaction.DISLIKED,
+        imageUrl: "https://placehold.co/200x300"
       },
     ],
   },
@@ -179,7 +189,8 @@ export const MOCKFRIENDS: Friend[] = [
         source: "HBO Max",
         notes: "Great visuals, slower pace.",
         status: RecommendationStatus.TRIED,
-        feedback: Feedback.LIKED,
+        reaction: Reaction.LIKED,
+        imageUrl: "https://placehold.co/200x300"
       },
     ],
   },

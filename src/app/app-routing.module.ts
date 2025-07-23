@@ -19,13 +19,7 @@ const routes: Routes = [
       { path: ':id/edit', component: RecommendationEditComponent }
     ]
   },
-  { path: 'friends', component: FriendsComponent,
-    children: [  
-      { path: 'new', component: FriendAddComponent },
-      { path: ':id', component: FriendDetailsComponent },
-      { path: ':id/recommendations', component: FriendRecommendationsComponent }
-    ]
-   },
+  { path: 'friends', component: FriendsComponent },
   { path: 'profile', component: ProfileComponent }
 ];
 

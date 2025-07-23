@@ -23,6 +23,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { FriendsComponent } from './friends/friends.component';
 import { RecommendationFilterPipe } from './recommendations/recommendation-filter.pipe';
 import { AppRoutingModule } from './app-routing.module';
+import { FriendFilterPipe } from './friends/friend-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AppRoutingModule } from './app-routing.module';
     ProfileComponent,
     FriendsComponent,
     RecommendationFilterPipe,
+    FriendFilterPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,46 @@
-<p>friend-item works!</p>
+<div class="panel panel-default" style="border-radius:10px; min-width: 300px; max-width: auto; height: 400px; margin: 2%; display: flex; flex-direction: row; justify-content: center; border: 1px solid #ddd;">
+    <div class="panel-heading" style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+            
+        <!-- Profile Header -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>{{friend.name}}</h2>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recommendations Row -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5>Their Recommendations</h5>
+                    <span>0</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-info">See Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5>Your recommendations</h5>
+                    <span>0</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button  class="btn btn-info">See Details</button>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="panel-body" style="padding: 0; overflow-y: auto; max-height: 100%;">
+        <div class="col-xs-12" style="padding: 0%;">
+            <app-friend-recommendations [friend]="friend"></app-friend-recommendations>
+        </div>
+    </div>
+</div>
