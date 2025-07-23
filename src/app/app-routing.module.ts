@@ -11,7 +11,7 @@ import { FriendRecommendationsComponent } from './friends/friend-recommendations
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/profile', pathMatch: 'full' }, // redirect root to /login page
+  { path: '', redirectTo: '/friends', pathMatch: 'full' }, // redirect root to /login page
   { path: 'recommendations', component: RecommendationsComponent, 
     children: [  
       { path: 'new', component: RecommendationFormComponent },
