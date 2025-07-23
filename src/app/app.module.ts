@@ -22,6 +22,7 @@ import { RecommendationsComponent } from './recommendations/recommendations.comp
 import { ProfileComponent } from './profile/profile.component';
 import { FriendsComponent } from './friends/friends.component';
 import { RecommendationFilterPipe } from './recommendations/recommendation-filter.pipe';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { RecommendationFilterPipe } from './recommendations/recommendation-filte
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MOCKRECOMMENDATIONS } from '../MOCKRECOMMENDATIONS';
 import { Category, Recommendation } from '../recommendations.model';
+import { Subscription } from 'rxjs';
+import { RecommendationService } from '../recommendation.service';
 
 @Component({
   selector: 'app-recommendation-list',
@@ -10,14 +12,23 @@ import { Category, Recommendation } from '../recommendations.model';
 })
 export class RecommendationListComponent {
 
+  subject: Subscription| undefined
+
   recommendations : Recommendation[]
   selectedRecommendation : boolean = false
 
   selectedCategory : Category | null
 
+  constructor(private recommendationService : RecommendationService){
+    this.recommendationService.recommendationSelectedEvent
+  }
   ngOnInit(){
-    this.recommendations = MOCKRECOMMENDATIONS
-    // console.log(this.recommendations)
+
+    this.subject = this.recommendationService.recommendationListChange.subscribe( recList =>{
+      this.recommendations = recList
+    })
+    this.recommendations = this.recommendationService.getRecommendations()
+
   }
 
   filterClick(strCategory: string){

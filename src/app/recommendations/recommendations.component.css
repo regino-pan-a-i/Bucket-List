@@ -1,0 +1,48 @@
+.row {
+    display: flex;
+    min-height: 100vh;
+}
+
+.recommendation-list-column {
+    transition: width 0.3s ease;
+}
+
+.recommendation-list-column.full-width {
+    width: 100%;
+    flex: 1;
+}
+
+.recommendation-list-column.split-view {
+    width: 41.66667%; 
+    flex: 0 0 41.66667%;
+}
+
+.recommendation-details-column {
+    width: 58.33333%; 
+    flex: 0 0 58.33333%;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.recommendation-details-column.hidden {
+    display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    
+    .recommendation-list-column.split-view,
+    .recommendation-list-column.full-width {
+        width: 100%;
+        flex: 1;
+    }
+    
+    .recommendation-details-column {
+        width: 100%;
+        flex: 1;
+    }
+} 

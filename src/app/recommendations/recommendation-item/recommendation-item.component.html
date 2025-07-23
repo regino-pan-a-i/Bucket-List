@@ -1,4 +1,4 @@
-<a class="list-group-item clearfix" style="display:flex; flex-direction:column; cursor: pointer;">
+<a [routerLink]="[recommendation.id]" routerLinkActive="active"class="list-group-item clearfix" style="display:flex; flex-direction:column; cursor: pointer;">
     <div>
         <h4 class="pull-left">{{recommendation.title}}</h4>
         <p class="pull-right" style="margin-top: 10px; margin-bottom: 10px;">{{recommendation.category}}</p>
